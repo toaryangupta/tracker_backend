@@ -47,7 +47,7 @@ const login = async (req, res) => {
     const token = jwt.sign({ id: employee._id }, process.env.JWT_SECRET);
     // console.log("----")
     // console.log(token)
-    responseHandler.success(res, { token }, 'Login successful');
+    responseHandler.success(res, { token,isAdmin:employee.isAdmin }, 'Login successful');
 
   } catch (error) {
     // console.log("I am here")
